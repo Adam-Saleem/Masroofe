@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Masroofe</string>
+    <string name="titleNameInSplashActivity">MASROOFE</string>
+    <string name="mainTitleInLoginActivity">مرحبًا بك في\n تطبيق مصروفي</string>
+    <string name="emailTitle">البريد الإلكتروني</string>
+    <string name="passwordTitle">كلمة السر</string>
+    <string name="forgetPass"> هل نسيت كلمة السر ؟</string>
+    <string name="loginBtnTitle">تسجيل الدخول</string>
+
+
+    titleOnLoginActivity
+
+
 </resources>
