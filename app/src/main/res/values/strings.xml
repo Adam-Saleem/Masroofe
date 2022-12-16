@@ -6,6 +6,7 @@
     <string name="passwordTitle">كلمة السر</string>
     <string name="forgetPass"> هل نسيت كلمة السر ؟</string>
     <string name="loginBtnTitle">تسجيل الدخول</string>
+    <string name="noteInLoginActivity">حان الوقت لتعرف\n وين راتبك بطير</string>
 
 
     titleOnLoginActivity
