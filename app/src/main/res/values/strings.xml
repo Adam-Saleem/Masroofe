@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">Masroofe</string>
-    <string name="mainTitleInLoginActivity" />
-    <string name="emailTitle" />
-    <string name="passwordTitle" />
-    <string name="forgetPass" />
-    <string name="loginBtnTitle" />
-    <string name="titleNameInSplashActivity" />
+    <string name="titleNameInSplashActivity">MASROOFE</string>
+    <string name="mainTitleInLoginActivity">مرحبًا بك في تطبيق مصروفي</string>
+    <string name="emailTitle">البريد الإلكتروني</string>
+    <string name="passwordTitle">كلمة السر</string>
+    <string name="forgetPass"> هل نسيت كلمة السر ؟</string>
+    <string name="loginBtnTitle">تسجيل الدخول</string>
+    <string name="Settings">الإعدادات</string>
+    <string name="noteInLoginActivity">حان الوقت لتعرف\n وين راتبك بطير</string>
+    <string name="EditUserInformation">تعديل المعلومات الشخصية</string>
+    <string name="UsingInformation">تعليمات الإستخدام</string>
+    <string name="RefactorPassword">تعديل كلمة السر</string>
+
 </resources>
