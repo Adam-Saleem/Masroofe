@@ -8,6 +8,9 @@
     <string name="loginBtnTitle">تسجيل الدخول</string>
     <string name="Settings">الإعدادات</string>
     <string name="noteInLoginActivity">حان الوقت لتعرف\n وين راتبك بطير</string>
+    <string name="EditUserInformation">تعديل المعلومات الشخصية</string>
+    <string name="UsingInformation">تعليمات الإستخدام</string>
+    <string name="RefactorPassword">تعديل كلمة السر</string>
 
 
     titleOnLoginActivity

@@ -20,13 +20,31 @@
         android:textStyle="bold"
         tools:ignore="MissingConstraints,RtlSymmetry" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/btnsignup_background"
-        android:text="@string/Settings"
-        android:textColor="@color/white"
-        android:textSize="30sp"
+        android:text="@string/EditUserInformation"
+        android:textColor="@color/head_filed_color"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btnsignup_background"
+        android:text="@string/RefactorPassword"
+        android:textColor="@color/head_filed_color"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btnsignup_background"
+        android:text="@string/UsingInformation"
+        android:textColor="@color/head_filed_color"
         android:textStyle="bold" />
 
 
