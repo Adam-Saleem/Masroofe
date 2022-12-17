@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/bright_gray"
+    android:background="@color/jacarta"
     tools:context=".LoginActivity">
 
 
@@ -21,12 +21,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/top_background" />
 
+
     <TextView
         android:id="@+id/titleInLoginActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/mainTitleInLoginActivity"
-        android:textColor="@color/white"
+        android:textColor="@color/jacarta"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/top_background_signup"
@@ -40,33 +41,17 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:text="@string/noteInLoginActivity"
-        android:textColor="@color/champagne"
+        android:textColor="@color/jacarta"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imgMoney"
         app:layout_constraintTop_toBottomOf="@+id/titleInLoginActivity"
         app:layout_constraintVertical_bias="0.195" />
-
-    <ImageView
-        android:id="@+id/imgMoney"
-        android:layout_width="235dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="84dp"
-        app:layout_constraintBottom_toBottomOf="@+id/top_background_signup"
-        app:layout_constraintEnd_toEndOf="@+id/top_background_signup"
-        app:layout_constraintHorizontal_bias="0.217"
-        app:layout_constraintStart_toStartOf="@+id/top_background_signup"
-        app:layout_constraintTop_toTopOf="@+id/titleInLoginActivity"
-        app:layout_constraintVertical_bias="0.372"
-        app:srcCompat="@drawable/money" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -88,7 +73,7 @@
             android:layout_marginEnd="32dp"
             android:text="@string/emailTitle"
             android:textAlignment="textStart"
-            android:textColor="@color/head_filed_color"
+            android:textColor="@color/white"
             android:textSize="17sp"
             android:textStyle="bold" />
 
@@ -115,7 +100,7 @@
             android:layout_marginEnd="32dp"
             android:text="@string/passwordTitle"
             android:textAlignment="textStart"
-            android:textColor="@color/head_filed_color"
+            android:textColor="@color/white"
             android:textSize="17sp"
             android:textStyle="bold" />
 
@@ -141,8 +126,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:text="@string/forgetPass"
+
             android:textAlignment="textStart"
-            android:textColor="#2f3363" />
+            android:textColor="@color/white" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/loginBtn"
@@ -153,7 +139,7 @@
             android:layout_marginEnd="32dp"
             android:background="@drawable/btn_background"
             android:text="@string/loginBtnTitle"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -165,11 +151,23 @@
             android:layout_marginEnd="32dp"
             android:background="@drawable/btnsignup_background"
             android:text="إنشاء حساب جديد"
-            android:textColor="@color/head_filed_color"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="255dp"
+        android:layout_height="251dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="@+id/top_background_signup"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/money" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

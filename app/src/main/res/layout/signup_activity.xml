@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/bright_gray"
+    android:background="@color/jacarta"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="47dp"
             android:text="أنشِئ حسابك"
-            android:textColor="@color/white"
+            android:textColor="@color/jacarta"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +68,7 @@
                 android:layout_marginEnd="32dp"
                 android:text="@string/full_name"
                 android:textAlignment="textStart"
-                android:textColor="@color/head_filed_color"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -95,7 +95,7 @@
                 android:layout_marginEnd="32dp"
                 android:text="@string/birth_day"
                 android:textAlignment="textStart"
-                android:textColor="@color/head_filed_color"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -123,7 +123,7 @@
                 android:layout_marginEnd="32dp"
                 android:text="@string/emailTitle"
                 android:textAlignment="textStart"
-                android:textColor="@color/head_filed_color"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -150,7 +150,7 @@
                 android:layout_marginEnd="32dp"
                 android:text="@string/passwordTitle"
                 android:textAlignment="textStart"
-                android:textColor="@color/head_filed_color"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -177,7 +177,7 @@
                 android:layout_marginEnd="32dp"
                 android:text="إعادة كتابة كلمة السر"
                 android:textAlignment="textStart"
-                android:textColor="@color/head_filed_color"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -206,7 +206,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="32dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:background="@drawable/btn_background"
                 android:text="@string/create_account"
                 android:textStyle="bold" />
