@@ -34,5 +34,10 @@
     <string name="repeatNewPasswordHint">Repeat New Password</string>
     <string name="updateInformation">تحديث المعلومات</string>
     <string name="updatePassword">تحديث كلمة السر</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="createNewAccount">إنشاء حساب جديد</string>
+    <string name="createAccount">أنشِئ حسابك</string>
+    <string name="repeatPassword">إعادة كتابة كلمة السر</string>
 
 </resources>

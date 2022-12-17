@@ -62,7 +62,7 @@
             android:hint="@string/full_name_hint"
             android:inputType="textPersonName"
             android:padding="8dp"
-            android:textColor="@color/place_holder_color"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
         <TextView
@@ -86,9 +86,9 @@
             android:background="@drawable/edit_text"
             android:ems="10"
             android:hint="@string/birthday_hint"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:padding="8dp"
-            android:textColor="@color/place_holder_color"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton

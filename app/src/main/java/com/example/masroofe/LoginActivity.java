@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 
 public class LoginActivity extends AppCompatActivity {
@@ -19,22 +18,18 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setupViews();
 
-        loginBtn.setOnClickListener(new View.OnClickListener()
-        {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                Intent loginInent = new Intent(LoginActivity.this , MainActivity.class);
+            public void onClick(View view) {
+                Intent loginInent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(loginInent);
             }
         });
 
-        signUpBtn.setOnClickListener(new View.OnClickListener()
-        {
+        signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                Intent loginInent = new Intent(LoginActivity.this , SignupActivity.class);
+            public void onClick(View view) {
+                Intent loginInent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(loginInent);
             }
         });
@@ -43,13 +38,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     //References
-    private void setupViews()
-    {
+    private void setupViews() {
         loginBtn = findViewById(R.id.loginBtn);
         signUpBtn = findViewById(R.id.signUpBtnInLoginActivity);
     }
-
-
-
-
 }

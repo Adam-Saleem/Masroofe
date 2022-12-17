@@ -10,7 +10,6 @@ public class UpdateUserPassword extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_user_password_activity);
-
         getSupportActionBar().hide();
     }
 }

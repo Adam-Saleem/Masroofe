@@ -10,7 +10,6 @@ public class UpdateUserInformation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_user_information_activity);
-
         getSupportActionBar().hide();
     }
 }
