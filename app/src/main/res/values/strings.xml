@@ -26,5 +26,13 @@
     <string name="email_hint">Email</string>
     <string name="create_account">إنشاء حساب</string>
     <string name="repeat_password_hint">Repeat Password</string>
+    <string name="currentPassword">كلمة السر الحالية</string>
+    <string name="currentPasswordHint">Current Password</string>
+    <string name="newPassword">كلمة السر الجديدة</string>
+    <string name="newPasswordHint">New Password</string>
+    <string name="repeatNewPassword">إعادة كتابة كلمة السر الجديدة</string>
+    <string name="repeatNewPasswordHint">Repeat New Password</string>
+    <string name="updateInformation">تحديث المعلومات</string>
+    <string name="updatePassword">تحديث كلمة السر</string>
 
 </resources>
