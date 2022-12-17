@@ -47,7 +47,7 @@
         android:id="@+id/emailTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="32dp"
         android:text="@string/emailTitle"
         android:textAlignment="textStart"
