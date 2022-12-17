@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/bright_gray"
     android:orientation="vertical"
     tools:context=".SplashActivity">
 
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="250dp"
-        android:fontFamily="cursive"
+        android:fontFamily="casual"
         android:text="@string/titleNameInSplashActivity"
         android:textColor="@color/black"
         android:textSize="20sp"
