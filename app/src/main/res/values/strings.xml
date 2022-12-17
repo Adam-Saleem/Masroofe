@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Masroofe</string>
-    <string name="titleNameInSplashActivity">MASROOFE</string>
+    <string name="titleNameInSplashActivity">مصروفي</string>
     <string name="mainTitleInLoginActivity">مرحبًا بك في تطبيق مصروفي</string>
     <string name="emailTitle">البريد الإلكتروني</string>
     <string name="passwordTitle">كلمة السر</string>
@@ -11,5 +11,20 @@
     <string name="EditUserInformation">تعديل المعلومات الشخصية</string>
     <string name="UsingInformation">تعليمات الإستخدام</string>
     <string name="RefactorPassword">تعديل كلمة السر</string>
+    <string name="income_during_the_month">كامل الدخل خلال الشهر</string>
+    <string name="remainder_of_the_income">المتبقي من الدخل</string>
+    <string name="quotation">تذكر، المالُ رَئيسٌ سَيِّء، لكِنَّهُ خادِمٌ مُمتاز...</string>
+    <string name="your_extra_income">مجموع دخلك الإضافي</string>
+    <string name="monthly_expenses">مجموع مصاريفك لهذا الشهر</string>
+    <string name="last_month_expenses">مجموع مدخرات الشهر الماضي</string>
+    <string name="previous_months">الأشهر السابقة</string>
+    <string name="list">القائمة</string>
+    <string name="full_name">الإسم الكامل</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="birth_day">تاريخ الميلاد</string>
+    <string name="birthday_hint">Birthday</string>
+    <string name="email_hint">Email</string>
+    <string name="create_account">إنشاء حساب</string>
+    <string name="repeat_password_hint">Repeat Password</string>
 
 </resources>

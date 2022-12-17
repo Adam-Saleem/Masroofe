@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="267dp"
         android:layout_gravity="center"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="150dp"
         android:src="@drawable/logo" />
 
     <TextView
@@ -23,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="200dp"
-        android:fontFamily="casual"
+        android:layout_marginTop="250dp"
+        android:fontFamily="cursive"
         android:text="@string/titleNameInSplashActivity"
         android:textColor="@color/black"
         android:textSize="20sp"
