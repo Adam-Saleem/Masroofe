@@ -6,8 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity
+{
+
+    private Animation top, bottom;
+    private TextView mainNameApp;
+    private ImageView img;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +26,16 @@ public class SplashActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        top = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        bottom = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
+
+        mainNameApp = findViewById(R.id.mainTitleInSplashScreen);
+        img = findViewById(R.id.logoInSpalshScreen);
+
+        img.setAnimation(top);
+        mainNameApp.setAnimation(bottom);
+
 
         getSupportActionBar().hide();
 
@@ -28,6 +48,6 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 2000);
+        }, 2500);
     }
 }
