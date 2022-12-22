@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/jacarta"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".SignupActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -34,150 +35,166 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/full_name"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/fullName"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text"
-        android:ems="10"
-        android:hint="@string/full_name_hint"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/birth_day"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+            <TextView
+                android:text="@string/full_name"
+                style="@style/label_feilds_style"/>
 
-    <EditText
-        android:id="@+id/birthDay"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text"
-        android:ems="10"
-        android:hint="@string/birthday_hint"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+            <EditText
+                android:id="@+id/fullName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/edit_text"
+                android:ems="10"
+                android:hint="@string/full_name_hint"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="@string/birth_day"
+                style="@style/label_feilds_style" />
+
+            <EditText
+                android:id="@+id/birthDay"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/edit_text"
+                android:ems="10"
+                android:hint="@string/birthday_hint"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/emailTitle"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+            <TextView
+                android:text="@string/emailTitle"
+                style="@style/label_feilds_style" />
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text"
-        android:ems="10"
-        android:hint="@string/email_hint"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/edit_text"
+                android:ems="10"
+                android:hint="@string/email_hint"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/passwordTitle"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+            <TextView
+                android:text="@string/passwordTitle"
+                style="@style/label_feilds_style"
+                />
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/edit_text"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/passwordTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/repeatPassword"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+            <TextView
+                android:text="@string/repeatPassword"
+                style="@style/label_feilds_style"
+                />
 
-    <EditText
-        android:id="@+id/passwordRepeat"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text"
-        android:ems="10"
-        android:hint="@string/repeat_password_hint"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+            <EditText
+                android:id="@+id/passwordRepeat"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/edit_text"
+                android:ems="10"
+                android:hint="@string/repeat_password_hint"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signUpBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/btn_background"
-        android:text="@string/create_account"
-        android:textColor="@color/jacarta"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/fixedInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:text="@string/fixed_income_message"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginStart="32dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/finishBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/finishSignup"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/jacarta"
+                        android:background="@drawable/btn_background"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/nextBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nextSignup"
+                        android:textStyle="bold"
+                        android:background="@drawable/btn_background"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@color/jacarta"
+                        android:layout_marginTop="5dp"
+                        />
+                </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

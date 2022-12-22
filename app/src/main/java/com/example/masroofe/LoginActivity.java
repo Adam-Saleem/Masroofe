@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         getSupportActionBar().hide();
-        setupViews();
+        setupReference();
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     //References
-    private void setupViews() {
+    private void setupReference() {
         loginBtn = findViewById(R.id.loginBtn);
         signUpBtn = findViewById(R.id.signUpBtnInLoginActivity);
     }

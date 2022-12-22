@@ -43,93 +43,59 @@
             android:textStyle="bold" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/emailTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/emailTitle"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+            <TextView
+                android:id="@+id/emailTitle"
+                android:text="@string/emailTitle"
+                style="@style/label_feilds_style"
+                 />
 
-    <TextView
-        android:id="@+id/passwordTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/passwordTitle"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textStyle="bold" />
+            <EditText
+                android:id="@+id/email"
+                style="@style/fields_style"
+                android:hint="@string/email"/>
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+            <TextView
+                android:id="@+id/passwordTitle"
+                android:text="@string/passwordTitle"
+                style="@style/label_feilds_style"
+                />
 
-    <TextView
-        android:id="@+id/forgetPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/forgetPass"
-        android:textAlignment="textStart"
-        android:textColor="@color/white" />
+            <EditText
+                android:id="@+id/password"
+                android:hint="@string/password"
+                style="@style/fields_style"
+                 />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/btn_background"
-        android:text="@string/loginBtnTitle"
-        android:textColor="@color/jacarta"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/forgetPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/forgetPass"
+                android:textAlignment="textStart"
+                android:textColor="@color/white" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signUpBtnInLoginActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/btnsignup_background"
-        android:text="@string/createNewAccount"
-        android:textColor="@color/jacarta"
-        android:textStyle="bold" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginBtn"
+                android:text="@string/loginBtnTitle"
+                android:background="@drawable/btn_background"
+                style="@style/btns_login_style" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/signUpBtnInLoginActivity"
+                android:background="@drawable/btnsignup_background"
+                android:text="@string/createNewAccount"
+                style="@style/btns_login_style"
+                 />
+        </LinearLayout>
 
 </LinearLayout>
