@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/imgHome"
+        android:title="الرئيسية"
+        app:showAsAction="always"
+        android:icon="@drawable/home"
+
+        />
+    <item
+        android:id="@+id/none0"
+        app:showAsAction="always"
+        android:title="" />
+
+
+    <item
+        android:id="@+id/imgCal"
+        app:showAsAction="always"
+        android:title="Calender"
+        android:icon="@drawable/calendar_masroofe"
+        />
+    <item
+        android:id="@+id/none2"
+        app:showAsAction="always"
+        android:title="" />
+    <item
+        android:id="@+id/none1"
+        app:showAsAction="always"
+        android:title="" />
+    <item
+        android:id="@+id/imgGuide"
+        app:showAsAction="always"
+        android:title="Guide"
+        android:icon="@drawable/guide"/>
+    <item
+        android:id="@+id/none3"
+        app:showAsAction="always"
+        android:title="" />
+
+
+    <item
+        android:id="@+id/imgMenu"
+        app:showAsAction="always"
+        android:title="Menu"
+        android:icon="@drawable/menu_masroofe"/>
+
+    <item
+        android:id="@+id/none5"
+        app:showAsAction="always"
+        android:title="" />
+    <item
+        android:id="@+id/none6"
+        app:showAsAction="always"
+        android:title="   " />
+
+</menu>
