@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class FixedIncomeInfoActivity extends AppCompatActivity {
 
     private ImageView imgHome, imgCal, imgGuide, imgMenu;
@@ -20,6 +22,7 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
     private EditText amountOfIncome;
     private SharedPreferences userPrefs;
     private SharedPreferences.Editor userEditor;
+    private FloatingActionButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +91,14 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FixedIncomeInfoActivity.this, Add_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //References
@@ -100,5 +111,6 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         imgCal = findViewById(R.id.imgCal);
         imgGuide = findViewById(R.id.imgGuide);
         imgMenu = findViewById(R.id.imgMenu);
+        btn = findViewById(R.id.floatingActionButton);
     }
 }

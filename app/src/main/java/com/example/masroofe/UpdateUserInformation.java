@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -23,9 +25,11 @@ public class UpdateUserInformation extends AppCompatActivity {
     private int day, month, year;
     private ImageView imgHome, imgCal, imgGuide, imgMenu;
 
+    private FloatingActionButton btn;
+
     private boolean FLAG = true;
     private SharedPreferences prefs, userPrefs;
-    private SharedPreferences.Editor editor , userEditor;
+    private SharedPreferences.Editor editor, userEditor;
     public static final String FULLNAME = "fullName";
     public static final String DATEBIRTH = "dateBirth";
     public static final String USERNAME = "username";
@@ -118,6 +122,13 @@ public class UpdateUserInformation extends AppCompatActivity {
             }
         });
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UpdateUserInformation.this, Add_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //References
@@ -130,6 +141,7 @@ public class UpdateUserInformation extends AppCompatActivity {
         imgCal = findViewById(R.id.imgCal);
         imgGuide = findViewById(R.id.imgGuide);
         imgMenu = findViewById(R.id.imgMenu);
+        btn = findViewById(R.id.floatingActionButton);
 
     }
 

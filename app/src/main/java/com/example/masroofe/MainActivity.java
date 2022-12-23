@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imgCal, imgGuide, imgMenu;
     private TextView fixedIncome;
     private SharedPreferences userPrefs;
-    FloatingActionButton btn;
+    private FloatingActionButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn = findViewById(R.id.floatingActionButton);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,12 +66,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
     private void setUpSharedPrefs() {
         userPrefs = getSharedPreferences("userInformation", 0);
         imgCal = findViewById(R.id.imgCal);
         imgMenu = findViewById(R.id.imgMenu);
         imgGuide = findViewById(R.id.imgGuide);
         fixedIncome = findViewById(R.id.fixedIncome);
+        btn = findViewById(R.id.floatingActionButton);
     }
 }
 

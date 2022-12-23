@@ -12,12 +12,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class UpdateUserPassword extends AppCompatActivity {
 
     private Button updateUserPassword;
     private EditText currentPassword, newPassword, repeatNewPassword;
     private ImageView imgHome, imgCal, imgGuide, imgMenu;
 
+    private FloatingActionButton btn;
     private boolean flag = true;
     private SharedPreferences prefs, userPrefs;
     private SharedPreferences.Editor editor, userEditor;
@@ -92,6 +95,14 @@ public class UpdateUserPassword extends AppCompatActivity {
             }
         });
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UpdateUserPassword.this, Add_Activity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void setupReference() {
@@ -103,6 +114,8 @@ public class UpdateUserPassword extends AppCompatActivity {
         imgCal = findViewById(R.id.imgCal);
         imgGuide = findViewById(R.id.imgGuide);
         imgMenu = findViewById(R.id.imgMenu);
+        btn = findViewById(R.id.floatingActionButton);
+
     }
 
     private void setUpSharedPrefs() {

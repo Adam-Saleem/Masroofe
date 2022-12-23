@@ -8,9 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class SettingsActivity extends AppCompatActivity {
     private ImageView imgHome, imgCal, imgGuide;
     private Button updateUserInformationBtn, updateUserPasswordBtn, fixedIncome;
+    private FloatingActionButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +72,14 @@ public class SettingsActivity extends AppCompatActivity {
                 return;
             }
         });
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, Add_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setupReference() {
@@ -78,6 +89,6 @@ public class SettingsActivity extends AppCompatActivity {
         imgHome = findViewById(R.id.imgHome);
         imgCal = findViewById(R.id.imgCal);
         imgGuide = findViewById(R.id.imgGuide);
-
+        btn = findViewById(R.id.floatingActionButton);
     }
 }
