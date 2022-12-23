@@ -1,84 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/jacarta"
-    tools:context=".SettingsActivity">
-
-
-    <TextView
-        android:id="@+id/settingsText"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/top_background"
-        android:paddingTop="45dp"
-        android:paddingEnd="30dp"
-        android:text="@string/Settings"
-        android:textColor="@color/jacarta"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints,RtlSymmetry" />
-
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/setting_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+    android:background="@color/bright_gray"
+    tools:context=".MonthsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/settingsText">
+        tools:ignore="MissingConstraints">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/UpdateUserInformation"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:gravity="center"
+            android:text="@string/ChooseMonthAndYear"
+            android:textColor="@color/jacarta"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/btnSelectMonthYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/btn_background"
-            android:text="@string/EditUserInformation"
-            android:textColor="@color/jacarta"
-            android:textStyle="bold"
-            tools:ignore="MissingConstraints" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/UpdateUserPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/btn_background"
-            android:text="@string/RefactorPassword"
-            android:textColor="@color/jacarta"
-            android:textStyle="bold" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/UsingInformation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/btn_background"
-            android:text="@string/UsingInformation"
-            android:textColor="@color/jacarta"
+            android:text="@string/Choose"
+            android:textColor="@color/white"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
 
+        <TextView
+            android:id="@+id/selectResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:gravity="center"
+            android:textColor="@color/jacarta"
+            android:textSize="28sp" />
     </LinearLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
