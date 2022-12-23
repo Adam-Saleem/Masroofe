@@ -311,13 +311,180 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:foregroundGravity="bottom"
-        app:layout_constraintBottom_toBottomOf="parent">
 
-        <!--the usual bottom navigation bar with items-->
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/light_silver"
+            app:fabCradleMargin="8dp"
+            app:fabCradleRoundedCornerRadius="50dp"
+            app:fabCradleVerticalOffset="6dp"
+            app:layout_anchor="@+id/app_bar"
+            app:layout_anchorGravity="bottom|center">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgHome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/home" />
+
+                        <TextView
+                            android:id="@+id/txtHome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="الرئيسية"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCal"
+                            android:layout_width="100dp"
+                            android:layout_height="34dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/calendar_masroofe" />
+
+                        <TextView
+                            android:id="@+id/txtCal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="الأشهر السابقة"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical"
+                        android:visibility="invisible">
+
+                        <ImageView
+                            android:id="@+id/imgAdd"
+                            android:layout_width="140dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/add_masroofe" />
+
+                        <TextView
+                            android:id="@+id/txtAdd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgGuide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/guide" />
+
+                        <TextView
+                            android:id="@+id/txtGuide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="دليل المستخدم"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgMenu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_margin="6dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/setting_icon" />
+
+                        <TextView
+                            android:id="@+id/txtMenu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="الإعدادات"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
@@ -328,25 +495,11 @@
             android:foreground="@drawable/add_masroofe"
             android:foregroundTint="@color/jacarta"
             app:backgroundTint="@color/vista_blue"
-            app:layout_anchor="@id/bottomAppBar"
-            android:onClick="addOnClick"/>
+            app:layout_anchor="@id/app_bar"
+            android:onClick="addOnClick">
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@android:color/white"
-            app:backgroundTint="@android:color/white"
-            app:fabCradleMargin="10dp"
-            app:fabCradleRoundedCornerRadius="10dp"
-            app:fabCradleVerticalOffset="10dp"
-            app:menu="@menu/app_bar_menu"
-            app:fabAlignmentMode="center"
-            android:padding="10dp"/>
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-        <!--the normal Floating action button which is
-            anchored to the bottom navigation button-->
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

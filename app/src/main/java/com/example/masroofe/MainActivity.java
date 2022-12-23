@@ -6,43 +6,32 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 
 public class MainActivity extends AppCompatActivity {
 
-    BottomAppBar appBar;
-    MenuItem menuItem;
+    ImageView imgMenu;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         getSupportActionBar().hide();
+        setUp();
+    }
 
-        appBar = findViewById(R.id.bottomAppBar);
-
-
-        appBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+    private void setUp() {
+        imgMenu = findViewById(R.id.imgMenu);
+        imgMenu.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.imgHome:
-                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                        startActivity(intent);
-
-                        break;
-                    case R.id.imgCal:
-                        Toast.makeText(MainActivity.this, "true", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case R.id.imgMenu:
-                        Intent intent2 = new Intent(MainActivity.this, SettingsActivity.class);
-                        startActivity(intent2);
-                        break;
-                }
-                return true;
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
             }
         });
     }
