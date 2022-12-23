@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 public class SettingsActivity extends AppCompatActivity {
     private ImageView imgHome, imgCal, imgGuide;
-    private Button updateUserInformationBtn, updateUserPasswordBtn;
+    private Button updateUserInformationBtn, updateUserPasswordBtn, fixedIncome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,14 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        fixedIncome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent fixedIncome = new Intent(SettingsActivity.this, FixedIncomeInfoActivity.class);
+                startActivity(fixedIncome);
+            }
+        });
+
         imgHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,8 +72,9 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void setupReference() {
-        updateUserInformationBtn = findViewById(R.id.UpdateUserInformation);
-        updateUserPasswordBtn = findViewById(R.id.UpdateUserPassword);
+        updateUserInformationBtn = findViewById(R.id.updateUserInformation);
+        updateUserPasswordBtn = findViewById(R.id.updateUserPassword);
+        fixedIncome = findViewById(R.id.fixedIncome);
         imgHome = findViewById(R.id.imgHome);
         imgCal = findViewById(R.id.imgCal);
         imgGuide = findViewById(R.id.imgGuide);

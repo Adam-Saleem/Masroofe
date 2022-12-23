@@ -42,9 +42,8 @@
     <string name="finishSignup"> إنهاء</string>
     <string name="nextSignup">التالي</string>
     <string name="fixed_income_message">هل تمتلك دخلًا ثابتًا ؟\nاضغط التالي لتزويدنا ببعض المعلومات</string>
-    <string name="helloOfUserInFixedIncInfo">مرحبًا</string>
     <string name="complete_info_text">من فضلك، أكمل المعلومات التالية:</string>
-    <string name="income_value">قيمة الدخل:</string>
+    <string name="income_value">قيمة الدخل الشهري الثابت</string>
     <string name="amount_of_income">Amount of income</string>
     <string name="type_income">نوع مصدر الدخل </string>
     <string name="add_income">إضافة</string>

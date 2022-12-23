@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@id/settingsText">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/UpdateUserInformation"
+            android:id="@+id/updateUserInformation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -55,7 +55,7 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/UpdateUserPassword"
+            android:id="@+id/updateUserPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -67,14 +67,14 @@
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/UsingInformation"
+            android:id="@+id/fixedIncome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/btn_background"
-            android:text="@string/UsingInformation"
+            android:text="@string/income_value"
             android:textColor="@color/jacarta"
             android:textStyle="bold" />
 
