@@ -19,8 +19,8 @@ public class UpdateUserPassword extends AppCompatActivity {
     private ImageView imgHome, imgCal, imgGuide, imgMenu;
 
     private boolean flag = true;
-    private SharedPreferences prefs;
-    private SharedPreferences.Editor editor;
+    private SharedPreferences prefs, userPrefs;
+    private SharedPreferences.Editor editor, userEditor;
     public static final String CURRENTPASSWORD = "current_password";
     public static final String NEWPASSWORD = "new_password";
     public static final String REPEATNEWPASSWORD = "repeat_new_password";
@@ -36,14 +36,23 @@ public class UpdateUserPassword extends AppCompatActivity {
     }
 
     private void setUp() {
+        String current_password = userPrefs.getString("password", "");
+
         updateUserPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!currentPassword.getText().toString().equals("") && !newPassword.getText().toString().equals("") && !repeatNewPassword.getText().toString().equals("")) {
-                    if (newPassword.getText().toString().equals(repeatNewPassword.getText().toString())) {
-                        Toast.makeText(UpdateUserPassword.this, "تم تحديث كلمة السر!", Toast.LENGTH_SHORT).show();
+                if (currentPassword.length() > 0 && newPassword.length() > 0 && repeatNewPassword.length() > 0) {
+                    if (currentPassword.getText().toString().equals(current_password)) {
+                        if (newPassword.getText().toString().equals(repeatNewPassword.getText().toString())) {
+                            userEditor = userPrefs.edit();
+                            userEditor.putString("password", newPassword.getText().toString());
+                            userEditor.apply();
+                            Toast.makeText(UpdateUserPassword.this, "تم تحديث كلمة السر!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(UpdateUserPassword.this, "كلمة السر الجديدة غير مطابقة!", Toast.LENGTH_LONG).show();
+                        }
                     } else {
-                        Toast.makeText(UpdateUserPassword.this, "كلمة السر الجديدة غير مطابقة!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(UpdateUserPassword.this, "كلمة السر الحالية غير صحيحة", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(UpdateUserPassword.this, "أكمل المعلومات أولاً!", Toast.LENGTH_SHORT).show();
@@ -96,6 +105,7 @@ public class UpdateUserPassword extends AppCompatActivity {
     }
 
     private void setUpSharedPrefs() {
+        userPrefs = getSharedPreferences("userInformation", 0);
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
     }
