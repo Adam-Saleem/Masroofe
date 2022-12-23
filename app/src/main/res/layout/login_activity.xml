@@ -57,7 +57,7 @@
                  />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/emailLogin"
                 style="@style/fields_style"
                 android:hint="@string/email"/>
 
@@ -68,7 +68,7 @@
                 />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/passwordLogin"
                 android:hint="@string/password"
                 style="@style/fields_style"
                  />

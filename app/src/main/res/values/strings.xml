@@ -2,7 +2,7 @@
     <string name="app_name">Masroofe</string>
     <string name="titleNameInSplashActivity">MASROOFE</string>
     <string name="mainTitleInLoginActivity">مرحبًا بك في تطبيق مصروفي</string>
-    <string name="emailTitle">البريد الإلكتروني</string>
+    <string name="emailTitle"> اسم المستخدم أو البريد الإلكتروني</string>
     <string name="passwordTitle">كلمة السر</string>
     <string name="forgetPass"> هل نسيت كلمة السر ؟</string>
     <string name="loginBtnTitle">تسجيل الدخول</string>
@@ -23,7 +23,7 @@
     <string name="full_name_hint">Full Name</string>
     <string name="birth_day">تاريخ الميلاد</string>
     <string name="birthday_hint">Birthday</string>
-    <string name="email_hint">Email</string>
+    <string name="email_hint">Email or Username</string>
     <string name="create_account">إنشاء حساب</string>
     <string name="repeat_password_hint">Repeat Password</string>
     <string name="currentPassword">كلمة السر الحالية</string>
@@ -34,7 +34,7 @@
     <string name="repeatNewPasswordHint">Repeat New Password</string>
     <string name="updateInformation">تحديث المعلومات</string>
     <string name="updatePassword">تحديث كلمة السر</string>
-    <string name="email">Email</string>
+    <string name="email">Email or Username</string>
     <string name="password">Password</string>
     <string name="createNewAccount">إنشاء حساب جديد</string>
     <string name="createAccount">أنشِئ حسابك</string>
