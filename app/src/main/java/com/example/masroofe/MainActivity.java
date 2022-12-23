@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
         getSupportActionBar().hide();
 
-        appBar = appBar.findViewById(R.id.bottomAppBar);
+        appBar = findViewById(R.id.bottomAppBar);
 
 
         appBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
