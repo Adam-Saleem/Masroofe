@@ -110,7 +110,6 @@ public class SignupActivity extends AppCompatActivity
             editorPref.putString("dateBirth", bDate);
             editorPref.putString("username", username);
             editorPref.putString("password", password);
-            editorPref.putString("repeatPassword", rePassword);
             editorPref.apply();
 
             Toast.makeText(SignupActivity.this, "تم إنشاء الحساب", Toast.LENGTH_SHORT).show();
