@@ -3,6 +3,7 @@ package com.example.masroofe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -19,6 +21,7 @@ public class UpdateUserInformation extends AppCompatActivity {
     private Button updateUserInformation;
     private EditText fullName, dateBirth;
     private int day, month, year;
+    private ImageView imgHome, imgCal, imgGuide, imgMenu;
 
     private boolean flag = true;
     private SharedPreferences prefs;
@@ -33,7 +36,10 @@ public class UpdateUserInformation extends AppCompatActivity {
         getSupportActionBar().hide();
         setupReference();
         setUpSharedPrefs();
+        setUp();
+    }
 
+    private void setUp() {
         Calendar calendarBirthDay = Calendar.getInstance();
 
         dateBirth.setOnClickListener(new View.OnClickListener() {
@@ -56,13 +62,45 @@ public class UpdateUserInformation extends AppCompatActivity {
         updateUserInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!fullName.getText().toString().equals("") && !dateBirth.getText().toString().equals("")){
+                if (!fullName.getText().toString().equals("") && !dateBirth.getText().toString().equals("")) {
                     Toast.makeText(UpdateUserInformation.this, "تم تحديث المعلومات!", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     Toast.makeText(UpdateUserInformation.this, "أكمل المعلومات أولاً!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        imgHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UpdateUserInformation.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgCal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UpdateUserInformation.this, MonthsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgGuide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                return;
+            }
+        });
+
+        imgMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UpdateUserInformation.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     //References
@@ -70,6 +108,11 @@ public class UpdateUserInformation extends AppCompatActivity {
         updateUserInformation = findViewById(R.id.updateUserInformation);
         fullName = findViewById(R.id.fullName);
         dateBirth = findViewById(R.id.birthDay);
+        imgHome = findViewById(R.id.imgHome);
+        imgCal = findViewById(R.id.imgCal);
+        imgGuide = findViewById(R.id.imgGuide);
+        imgMenu = findViewById(R.id.imgMenu);
+
     }
 
     private void setUpSharedPrefs() {

@@ -102,6 +102,7 @@
             app:layout_anchor="@+id/app_bar"
             app:layout_anchorGravity="bottom|center">
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -251,6 +252,7 @@
 
             </LinearLayout>
 
+
         </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -262,6 +264,7 @@
             android:contentDescription="@string/appbar_scrolling_view_behavior"
             android:foreground="@drawable/add_masroofe"
             android:foregroundTint="@color/jacarta"
+            android:onClick="addOnClick"
             app:backgroundTint="@color/vista_blue"
             app:layout_anchor="@id/app_bar">
 

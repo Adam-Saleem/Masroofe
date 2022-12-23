@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class SettingsActivity extends AppCompatActivity {
-
+    private ImageView imgHome, imgCal, imgGuide;
     private Button updateUserInformationBtn, updateUserPasswordBtn;
 
     @Override
@@ -16,7 +17,11 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         getSupportActionBar().hide();
-        setUpViews();
+        setupReference();
+        setUp();
+    }
+
+    private void setUp() {
 
         updateUserInformationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,10 +38,37 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(UpdateUserPassword);
             }
         });
+
+        imgHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgCal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, MonthsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgGuide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                return;
+            }
+        });
     }
 
-    private void setUpViews() {
+    private void setupReference() {
         updateUserInformationBtn = findViewById(R.id.UpdateUserInformation);
         updateUserPasswordBtn = findViewById(R.id.UpdateUserPassword);
+        imgHome = findViewById(R.id.imgHome);
+        imgCal = findViewById(R.id.imgCal);
+        imgGuide = findViewById(R.id.imgGuide);
+
     }
 }
