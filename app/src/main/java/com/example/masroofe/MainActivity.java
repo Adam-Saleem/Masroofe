@@ -5,20 +5,11 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.google.android.material.bottomappbar.BottomAppBar;
 
 public class MainActivity extends AppCompatActivity {
-
-    ImageView imgHome;
-    ImageView imgCal;
-    ImageView imgGuide;
-    ImageView imgMenu;
-
+    ImageView imgCal, imgGuide, imgMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +20,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUp() {
-
-        imgHome = findViewById(R.id.imgHome);
-        imgHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               return;
-            }
-        });
 
         imgCal = findViewById(R.id.imgCal);
         imgCal.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
 
     }
