@@ -1,7 +1,6 @@
 package com.example.masroofe;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,25 +9,24 @@ import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity {
-    ImageView imgCal, imgGuide, imgMenu;
+public class AddExp_Activity extends AppCompatActivity {
+
+    ImageView imgHome, imgCal, imgGuide, imgMenu;
     FloatingActionButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
-        getSupportActionBar().hide();
-        setUp();
+        setContentView(R.layout.activity_add_exp);
+        barSetUp();
     }
 
-    private void setUp() {
-
+    private void barSetUp() {
         imgCal = findViewById(R.id.imgCal);
         imgCal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MonthsActivity.class);
+                Intent intent = new Intent(AddExp_Activity.this, MonthsActivity.class);
                 startActivity(intent);
             }
         });
@@ -46,7 +44,16 @@ public class MainActivity extends AppCompatActivity {
         imgMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                Intent intent = new Intent(AddExp_Activity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgHome = findViewById(R.id.imgHome);
+        imgHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddExp_Activity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -55,15 +62,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Add_Activity.class);
+                Intent intent = new Intent(AddExp_Activity.this, Add_Activity.class);
                 startActivity(intent);
             }
         });
 
 
     }
+
 }
-
-
-
-

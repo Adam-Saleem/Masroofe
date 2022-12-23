@@ -7,24 +7,6 @@
     android:background="@color/head_filed_color">
 
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        tools:layout_editor_absoluteY="677dp">-->
-
-<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--            android:id="@+id/floatingActionButton"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="0.2"-->
-<!--            android:clickable="true"-->
-<!--            android:contentDescription="@string/appbar_scrolling_view_behavior"-->
-<!--            android:foreground="@drawable/add_masroofe"-->
-<!--            android:foregroundTint="@color/jacarta"-->
-<!--            app:backgroundTint="@color/vista_blue">-->
-
-<!--        </com.google.android.material.floatingactionbutton.FloatingActionButton>-->
-<!--    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
