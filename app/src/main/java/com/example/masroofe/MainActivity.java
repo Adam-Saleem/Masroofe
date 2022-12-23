@@ -14,6 +14,9 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 
 public class MainActivity extends AppCompatActivity {
 
+    ImageView imgHome;
+    ImageView imgCal;
+    ImageView imgGuide;
     ImageView imgMenu;
 
 
@@ -26,6 +29,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUp() {
+
+        imgHome = findViewById(R.id.imgHome);
+        imgHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgCal = findViewById(R.id.imgCal);
+        imgCal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MonthsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgGuide = findViewById(R.id.imgGuide);
+        imgGuide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         imgMenu = findViewById(R.id.imgMenu);
         imgMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
     }
 }
 
