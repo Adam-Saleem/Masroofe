@@ -23,6 +23,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         getSupportActionBar().hide();
+
+        //References
         setupReference();
 
         prefs = getSharedPreferences("userInformation",0);
@@ -63,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
     private void checkLogin(String username, String password)
     {
 
-        if(username.length() > 1 && password.length() > 1)
+        if(username.length() > 0 && password.length() > 0)
         {
             //get data from prefs register
             String regUsername = prefs.getString("username", "");

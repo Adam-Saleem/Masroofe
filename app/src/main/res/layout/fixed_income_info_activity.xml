@@ -96,7 +96,7 @@
         android:text="@string/income_value" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/fixedValue"
         android:hint="@string/amount_of_income"
         style="@style/fields_style"
         />
