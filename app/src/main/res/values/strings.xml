@@ -48,6 +48,8 @@
     <string name="amount_of_income">Amount of income</string>
     <string name="type_income">نوع مصدر الدخل </string>
     <string name="add_income">إضافة</string>
+    <string name="ChooseMonthAndYear">اختر السنة والشهر لإظهار المصاريف</string>
+    <string name="Choose">اختيار</string>
 
     <string-array name="type_incomes">
         <item>يومي</item>
