@@ -9,62 +9,28 @@ import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class Add_Activity extends AppCompatActivity {
+public class AddRev_Activity extends AppCompatActivity {
 
-    ImageView btnDef, addExp, addRev;
     ImageView imgHome, imgCal, imgGuide, imgMenu;
     FloatingActionButton btn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
-        setUp();
+        setContentView(R.layout.activity_add_rev);
         barSetUp();
     }
 
-
-
-    private void setUp() {
-
-
-        btnDef = findViewById(R.id.btnDefine);
-        btnDef.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Add_Activity.this, Define_Activity.class);
-                startActivity(intent);
-
-            }
-        });
-
-        addExp = findViewById(R.id.btnExp);
-        addExp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Add_Activity.this, AddExp_Activity.class);
-                startActivity(intent);
-            }
-        });
-
-        addRev = findViewById(R.id.btnRev);
-        addRev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Add_Activity.this, AddRev_Activity.class);
-                startActivity(intent);
-            }
-        });
-    }
     private void barSetUp() {
         imgCal = findViewById(R.id.imgCal);
         imgCal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Add_Activity.this, MonthsActivity.class);
+                Intent intent = new Intent(AddRev_Activity.this, MonthsActivity.class);
                 startActivity(intent);
             }
         });
+
+
 
         imgGuide = findViewById(R.id.imgGuide);
         imgGuide.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +45,7 @@ public class Add_Activity extends AppCompatActivity {
         imgMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Add_Activity.this, SettingsActivity.class);
+                Intent intent = new Intent(AddRev_Activity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
@@ -88,9 +54,19 @@ public class Add_Activity extends AppCompatActivity {
         imgHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Add_Activity.this, MainActivity.class);
+                Intent intent = new Intent(AddRev_Activity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
-    }
-}
+
+        btn = findViewById(R.id.floatingActionButton);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddRev_Activity.this, Add_Activity.class);
+                startActivity(intent);
+            }
+        });
+
+    }}
+

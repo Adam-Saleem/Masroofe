@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddRev_Activity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bright_gray"
+        tools:context=".AddExp_Activity">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom"
+                android:backgroundTint="@color/light_silver"
+                app:fabCradleMargin="8dp"
+                app:fabCradleRoundedCornerRadius="50dp"
+                app:fabCradleVerticalOffset="6dp"
+                app:layout_anchor="@+id/app_bar"
+                app:layout_anchorGravity="bottom|center">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgHome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/home" />
+
+                        <TextView
+                            android:id="@+id/txtHome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="الرئيسية"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCal"
+                            android:layout_width="100dp"
+                            android:layout_height="34dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/calendar_masroofe" />
+
+                        <TextView
+                            android:id="@+id/txtCal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="الأشهر السابقة"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical"
+                        android:visibility="invisible">
+
+                        <ImageView
+                            android:id="@+id/imgAdd"
+                            android:layout_width="140dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/add_masroofe" />
+
+                        <TextView
+                            android:id="@+id/txtAdd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgGuide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/guide" />
+
+                        <TextView
+                            android:id="@+id/txtGuide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="دليل المستخدم"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgMenu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_margin="6dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/setting_icon" />
+
+                        <TextView
+                            android:id="@+id/txtMenu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="الإعدادات"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:clickable="true"
+                android:contentDescription="@string/appbar_scrolling_view_behavior"
+                android:foreground="@drawable/add_masroofe"
+                android:foregroundTint="@color/jacarta"
+                android:onClick="addOnClick"
+                app:backgroundTint="@color/vista_blue"
+                app:layout_anchor="@id/app_bar">
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="60dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context=".LoginActivity">
+
+            <ImageView
+                android:layout_width="252dp"
+                android:layout_height="228dp"
+                android:layout_marginTop="16dp"
+                android:padding="20dp"
+                app:srcCompat="@drawable/salary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView17"
+                    style="@style/label_feilds_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="اسم الحساب"
+                    android:textColor="@color/jacarta" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName2"
+                    style="@style/fields_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:hint="Account Name"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    style="@style/label_feilds_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="المبلغ المصروف"
+                    android:textColor="@color/jacarta" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName3"
+                    style="@style/fields_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:hint="income Amount"
+                    android:inputType="textPersonName" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/signUpBtnInLoginActivity"
+                    style="@style/btns_login_style"
+                    android:background="@drawable/main_drawable"
+                    android:text="إضافة المبلغ"
+                    android:textColor="@color/bright_gray" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
