@@ -33,11 +33,22 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
     private void setUp() {
         String full_name = userPrefs.getString("fullName", "");
         nameOfUser.setText("مرحبًا" + " " + full_name);
+        String fixedIncome = userPrefs.getString("fixedIncome", "");
+        if (fixedIncome.length() > 0) {
+            amountOfIncome.setText(fixedIncome);
+            addIncomeBtn.setText("تعديل");
+        }
 
         addIncomeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(FixedIncomeInfoActivity.this, "تم إضافة الدخل بنجاح", Toast.LENGTH_SHORT).show();
+                String message = "";
+                if (fixedIncome.length() > 0) {
+                    message = "تم تعديل الدخل بنجاح";
+                } else {
+                    message = "تم إضافة الدخل بنجاح";
+                }
+                Toast.makeText(FixedIncomeInfoActivity.this, message, Toast.LENGTH_SHORT).show();
                 userEditor = userPrefs.edit();
                 userEditor.putString("fixedIncome", amountOfIncome.getText().toString());
                 userEditor.apply();
