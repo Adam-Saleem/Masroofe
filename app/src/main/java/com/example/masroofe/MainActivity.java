@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
         imgHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(intent);
+               return;
             }
         });
 
@@ -52,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
         imgGuide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(intent);
+                return;
             }
         });
 
