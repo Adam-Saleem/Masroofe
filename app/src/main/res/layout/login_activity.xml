@@ -58,6 +58,7 @@
 
             <EditText
                 android:id="@+id/emailLogin"
+                android:inputType="textPersonName"
                 style="@style/fields_style"
                 android:hint="@string/email"/>
 
@@ -70,6 +71,7 @@
             <EditText
                 android:id="@+id/passwordLogin"
                 android:hint="@string/password"
+                android:inputType="textPassword"
                 style="@style/fields_style"
                  />
 

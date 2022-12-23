@@ -59,14 +59,21 @@ public class SignupActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                String fName = fullName.getText().toString();
-                String bDate = dateBirth.getText().toString();
-                String userName = username.getText().toString();
-                String pass = password.getText().toString();
-                String rePassword = repeatPassword.getText().toString();
+                String fName = fullName.getText().toString().trim();
+                String bDate = dateBirth.getText().toString().trim();
+                String userName = username.getText().toString().trim();
+                String pass = password.getText().toString().trim();
+                String rePassword = repeatPassword.getText().toString().trim();
 
                 //get information about user
-                userData(fName, bDate, userName, pass, rePassword);
+                if(pass.equals(rePassword))
+                {
+                    userData(fName, bDate, userName, pass, rePassword);
+                }
+                else
+                {
+                    Toast.makeText(SignupActivity.this, "كلمات السر غير متطابقة!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -96,7 +103,7 @@ public class SignupActivity extends AppCompatActivity
     //get information about user method
     private void userData(String fName, String bDate, String username , String password, String rePassword)
     {
-        if(fName.length() > 1 && bDate.length() > 1 && username.length() > 1 && password.length() > 1 && rePassword.length() > 1)
+        if(fName.length() > 0 && bDate.length() > 0 && username.length() > 0 && password.length() > 0 && rePassword.length() > 0)
         {
             SharedPreferences.Editor editorPref = prefs.edit();
             editorPref.putString("fullName", fName);
