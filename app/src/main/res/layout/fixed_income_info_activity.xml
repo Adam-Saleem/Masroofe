@@ -55,18 +55,9 @@
         android:layout_marginTop="50dp"
         android:text="@string/complete_info_text"
         style="@style/textViews_fixed_style"
-        android:textColor="@color/vista_blue"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="20sp"/>
-
-
-<!--    <TextView-->
-<!--        android:id="@+id/textView14"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:textColor="@color/vista_blue"-->
-<!--        style="@style/textViews_fixed_style"-->
-<!--        android:text="@string/sure_message" />-->
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -90,6 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:text="@string/type_income"/>
@@ -100,6 +92,7 @@
         android:layout_gravity="right"
         style="@style/label_feilds_style"
         android:layout_marginTop="30dp"
+        android:textColor="@color/white"
         android:text="@string/income_value" />
 
     <EditText
@@ -113,6 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_income"
+        android:textSize="18sp"
         android:layout_gravity="center"
         android:textStyle="bold"
         android:background="@drawable/btn_background"
