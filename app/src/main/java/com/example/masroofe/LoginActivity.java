@@ -26,9 +26,14 @@ public class LoginActivity extends AppCompatActivity {
 
         //References
         setupReference();
+        loginSetup();
+        signupSetup();
 
-        prefs = getSharedPreferences("userInformation",0);
+    }
 
+    //--------------Methods---------------------------------------------------------
+    private void loginSetup()
+    {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -38,7 +43,10 @@ public class LoginActivity extends AppCompatActivity {
                 checkLogin(userNameLogin, passwordLogin);
             }
         });
+    }
 
+    private void signupSetup()
+    {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -47,11 +55,9 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(signup);
             }
         });
-
-
     }
 
-    //--------------Methods---------------------------------------------------------
+
     //References
     private void setupReference()
     {
@@ -59,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.passwordLogin);
         loginBtn = findViewById(R.id.loginBtn);
         signUpBtn = findViewById(R.id.signUpBtnInLoginActivity);
+        prefs = getSharedPreferences("userInformation",0);
     }
 
     //check login method

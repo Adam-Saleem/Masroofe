@@ -1,7 +1,6 @@
 package com.example.masroofe;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +10,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -31,9 +29,16 @@ public class SignupActivity extends AppCompatActivity {
         setupReference();
         getSupportActionBar().hide();
 
-        Calendar calendarBirthDay = Calendar.getInstance();
-        prefs = getSharedPreferences("userInformation", 0);
+        calendarSetup();
+        finishSetup();
+        nextSetup();
+    }
 
+
+    //--------------Methods---------------------------------------------------------
+    private void calendarSetup()
+    {
+        Calendar calendarBirthDay = Calendar.getInstance();
 
         dateBirth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +57,10 @@ public class SignupActivity extends AppCompatActivity {
                 datePicker.show();
             }
         });
+    }
 
+    private void finishSetup()
+    {
         finishBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +71,10 @@ public class SignupActivity extends AppCompatActivity {
 
             }
         });
+    }
 
+    private void nextSetup()
+    {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,7 +102,6 @@ public class SignupActivity extends AppCompatActivity {
         }
     }
 
-    //--------------Methods---------------------------------------------------------
     //References
     private void setupReference() {
         finishBtn = findViewById(R.id.finishBtn);
@@ -101,6 +111,7 @@ public class SignupActivity extends AppCompatActivity {
         username = findViewById(R.id.email);
         password = findViewById(R.id.password);
         repeatPassword = findViewById(R.id.passwordRepeat);
+        prefs = getSharedPreferences("userInformation", 0);
     }
 
     //get information about user method
@@ -120,6 +131,5 @@ public class SignupActivity extends AppCompatActivity {
             return false;
         }
     }
-
 
 }
