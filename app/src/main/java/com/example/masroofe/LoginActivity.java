@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,19 +16,23 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginBtn, signUpBtn;
     private EditText email, password;
 
+    private boolean FLAG = true;
+    private SharedPreferences prefs, userPrefs;
+    private SharedPreferences.Editor editor ;
+    public static final String USERNAME = "username";
+    public static final String PASSWORD = "password";
 
-    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         getSupportActionBar().hide();
-
         //References
         setupReference();
         loginSetup();
         signupSetup();
+        checkDate();
 
     }
 
@@ -65,7 +70,9 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.passwordLogin);
         loginBtn = findViewById(R.id.loginBtn);
         signUpBtn = findViewById(R.id.signUpBtnInLoginActivity);
-        prefs = getSharedPreferences("userInformation",0);
+        userPrefs = getSharedPreferences("userInformation",0);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = prefs.edit();
     }
 
     //check login method
@@ -75,8 +82,8 @@ public class LoginActivity extends AppCompatActivity {
         if(username.length() > 0 && password.length() > 0)
         {
             //get data from prefs register
-            String regUsername = prefs.getString("username", "");
-            String regPassword = prefs.getString("password", "");
+            String regUsername = userPrefs.getString("username", "");
+            String regPassword = userPrefs.getString("password", "");
 
             if(username.trim().equals(regUsername.trim()) && password.trim().equals(regPassword.trim()))
             {
@@ -94,5 +101,35 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, "أملئ جميع الحقول، وحاول مرة أخرى", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (!email.getText().toString().equals("") || !password.getText().toString().equals("")) {
+            String Email = email.getText().toString();
+            String Password = password.getText().toString();
+            editor.putString("username", Email);
+            editor.putString("password", Password);
+            editor.putBoolean("flag", FLAG);
+            editor.commit();
+        }
+    }
+
+    private void checkDate() {
+        boolean f = prefs.getBoolean("flag",false);
+        if (f) {
+            String Email = prefs.getString(USERNAME, "");
+            String Password = prefs.getString(PASSWORD, "");
+            email.setText(Email);
+            password.setText(Password);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        editor.clear();
+        editor.commit();
     }
 }

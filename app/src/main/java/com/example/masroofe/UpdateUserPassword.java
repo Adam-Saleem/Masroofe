@@ -33,6 +33,7 @@ public class UpdateUserPassword extends AppCompatActivity {
         setupReference();
         setUpSharedPrefs();
         setUp();
+        checkDate();
     }
 
     private void setUp() {
@@ -124,8 +125,8 @@ public class UpdateUserPassword extends AppCompatActivity {
 
 
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onStop() {
+        super.onStop();
         if (!currentPassword.getText().toString().equals("") || !newPassword.getText().toString().equals("") || !repeatNewPassword.getText().toString().equals("")) {
             String current_password = currentPassword.getText().toString();
             String new_password = newPassword.getText().toString();
@@ -139,15 +140,10 @@ public class UpdateUserPassword extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        checkDate();
-    }
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onDestroy() {
+        super.onDestroy();
         editor.clear();
         editor.commit();
     }

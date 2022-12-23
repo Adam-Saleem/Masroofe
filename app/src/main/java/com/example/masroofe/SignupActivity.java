@@ -1,15 +1,18 @@
 package com.example.masroofe;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -18,7 +21,15 @@ public class SignupActivity extends AppCompatActivity {
     private Button finishBtn, nextBtn;
     private EditText fullName, dateBirth, username, password, repeatPassword;
     private int day, month, year;
-    SharedPreferences prefs;
+    private SharedPreferences prefs, userPrefs;
+    private SharedPreferences.Editor editor;
+
+    private boolean FLAG = true;
+    public static final String USERNAME = "username";
+    public static final String DATEBIRTH = "dateBirth";
+    public static final String FULLNAME = "fullName";
+    public static final String PASSWORD = "password";
+    public static final String REPEATPASSWORD = "repeatPassword";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +43,12 @@ public class SignupActivity extends AppCompatActivity {
         calendarSetup();
         finishSetup();
         nextSetup();
+        checkDate();
     }
 
 
     //--------------Methods---------------------------------------------------------
-    private void calendarSetup()
-    {
+    private void calendarSetup() {
         Calendar calendarBirthDay = Calendar.getInstance();
 
         dateBirth.setOnClickListener(new View.OnClickListener() {
@@ -59,8 +70,7 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    private void finishSetup()
-    {
+    private void finishSetup() {
         finishBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,8 +83,7 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    private void nextSetup()
-    {
+    private void nextSetup() {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,13 +120,15 @@ public class SignupActivity extends AppCompatActivity {
         username = findViewById(R.id.email);
         password = findViewById(R.id.password);
         repeatPassword = findViewById(R.id.passwordRepeat);
-        prefs = getSharedPreferences("userInformation", 0);
+        userPrefs = getSharedPreferences("userInformation", 0);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = prefs.edit();
     }
 
     //get information about user method
     private boolean userData(String fName, String bDate, String username, String password, String rePassword) {
         if (fName.length() > 0 && bDate.length() > 0 && username.length() > 0 && password.length() > 0 && rePassword.length() > 0) {
-            SharedPreferences.Editor editorPref = prefs.edit();
+            SharedPreferences.Editor editorPref = userPrefs.edit();
             editorPref.putString("fullName", fName);
             editorPref.putString("dateBirth", bDate);
             editorPref.putString("username", username);
@@ -132,4 +143,46 @@ public class SignupActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (fullName.length() > 0 || dateBirth.length() > 0 || username.length() > 0 || password.length() > 0 || repeatPassword.length() > 0) {
+            String FULLNAME = fullName.getText().toString();
+            String DATEBIRTH = dateBirth.getText().toString();
+            String USERNAME = username.getText().toString();
+            String Password = password.getText().toString();
+            String REPASSWORD = repeatPassword.getText().toString();
+
+            editor.putString("fullName", FULLNAME);
+            editor.putString("dateBirth", DATEBIRTH);
+            editor.putString("username", USERNAME);
+            editor.putString("password", Password);
+            editor.putString("repeatPassword", REPASSWORD);
+            editor.putBoolean("flag", FLAG);
+            editor.commit();
+        }
+    }
+
+    private void checkDate() {
+        boolean f = prefs.getBoolean("flag",false);
+        if (f) {
+            String full_name = prefs.getString(FULLNAME, "");
+            String date_birth = prefs.getString(DATEBIRTH, "");
+            String user_name = prefs.getString(USERNAME, "");
+            String passWord = prefs.getString(PASSWORD, "");
+            String repeat_password = prefs.getString(REPEATPASSWORD, "");
+            fullName.setText(full_name);
+            dateBirth.setText(date_birth);
+            username.setText(user_name);
+            password.setText(passWord);
+            repeatPassword.setText(repeat_password);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        editor.clear();
+        editor.commit();
+    }
 }

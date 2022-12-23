@@ -19,15 +19,16 @@ import java.util.Calendar;
 
 public class UpdateUserInformation extends AppCompatActivity {
     private Button updateUserInformation;
-    private EditText fullName, dateBirth, email;
+    private EditText fullName, dateBirth, username;
     private int day, month, year;
     private ImageView imgHome, imgCal, imgGuide, imgMenu;
 
-    private boolean flag = true;
+    private boolean FLAG = true;
     private SharedPreferences prefs, userPrefs;
     private SharedPreferences.Editor editor , userEditor;
-    public static final String FULLNAME = "full_name";
-    public static final String DATEBIRTH = "date_birth";
+    public static final String FULLNAME = "fullName";
+    public static final String DATEBIRTH = "dateBirth";
+    public static final String USERNAME = "username";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class UpdateUserInformation extends AppCompatActivity {
         setupReference();
         setUpSharedPrefs();
         setUp();
+        checkDate();
     }
 
     private void setUp() {
@@ -46,7 +48,7 @@ public class UpdateUserInformation extends AppCompatActivity {
 
         fullName.setText(full_name);
         dateBirth.setText(date_birth);
-        email.setText(user_name);
+        username.setText(user_name);
 
         Calendar calendarBirthDay = Calendar.getInstance();
 
@@ -70,12 +72,12 @@ public class UpdateUserInformation extends AppCompatActivity {
         updateUserInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ((fullName.length() > 0) && (dateBirth.length() > 0) && (email.length() > 0)) {
+                if ((fullName.length() > 0) && (dateBirth.length() > 0) && (username.length() > 0)) {
 
                     userEditor = userPrefs.edit();
                     userEditor.putString("fullName", fullName.getText().toString());
                     userEditor.putString("dateBirth", dateBirth.getText().toString());
-                    userEditor.putString("username", email.getText().toString());
+                    userEditor.putString("username", username.getText().toString());
                     userEditor.apply();
 
                     Toast.makeText(UpdateUserInformation.this, "تم تحديث المعلومات!", Toast.LENGTH_SHORT).show();
@@ -123,7 +125,7 @@ public class UpdateUserInformation extends AppCompatActivity {
         updateUserInformation = findViewById(R.id.updateUserInformation);
         fullName = findViewById(R.id.fullName);
         dateBirth = findViewById(R.id.birthDay);
-        email = findViewById(R.id.email);
+        username = findViewById(R.id.username);
         imgHome = findViewById(R.id.imgHome);
         imgCal = findViewById(R.id.imgCal);
         imgGuide = findViewById(R.id.imgGuide);
@@ -137,40 +139,39 @@ public class UpdateUserInformation extends AppCompatActivity {
         editor = prefs.edit();
     }
 
-//    private void checkDate() {
-//        boolean f = prefs.getBoolean("FLAG", false);
-//        if (f) {
-//            String full_name = prefs.getString(FULLNAME, "");
-//            String date_birth = prefs.getString(DATEBIRTH, "");
-//            fullName.setText(full_name);
-//            dateBirth.setText(date_birth);
-//        }
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        if (!fullName.getText().toString().equals("") || !dateBirth.getText().toString().equals("")) {
-//            String full_name = fullName.getText().toString();
-//            String date_birth = dateBirth.getText().toString();
-//
-//            editor.putString(FULLNAME, full_name);
-//            editor.putString(DATEBIRTH, date_birth);
-//            editor.putBoolean("FLAG", flag);
-//            editor.commit();
-//        }
-//    }
-//
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        checkDate();
-//    }
-//
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        editor.clear();
-//        editor.commit();
-//    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (!fullName.getText().toString().equals("") || !dateBirth.getText().toString().equals("") || !username.getText().toString().equals("")) {
+            String full_name = fullName.getText().toString();
+            String date_birth = dateBirth.getText().toString();
+            String user_name = username.getText().toString();
+
+            editor.putString("fullName", full_name);
+            editor.putString("dateBirth", date_birth);
+            editor.putString("username", user_name);
+            editor.putBoolean("flag", FLAG);
+            editor.commit();
+        }
+    }
+
+    private void checkDate() {
+        boolean f = prefs.getBoolean("flag", false);
+        if (f) {
+            String full_name = prefs.getString(FULLNAME, "");
+            String date_birth = prefs.getString(DATEBIRTH, "");
+            String user_name = prefs.getString(USERNAME, "");
+            fullName.setText(full_name);
+            dateBirth.setText(date_birth);
+            username.setText(user_name);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        editor.clear();
+        editor.commit();
+    }
 }
