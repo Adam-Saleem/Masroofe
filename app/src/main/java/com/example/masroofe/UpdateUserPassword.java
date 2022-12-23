@@ -2,19 +2,21 @@ package com.example.masroofe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class UpdateUserPassword extends AppCompatActivity {
 
     private Button updateUserPassword;
     private EditText currentPassword, newPassword, repeatNewPassword;
-
+    private ImageView imgHome, imgCal, imgGuide, imgMenu;
 
     private boolean flag = true;
     private SharedPreferences prefs;
@@ -30,21 +32,56 @@ public class UpdateUserPassword extends AppCompatActivity {
         getSupportActionBar().hide();
         setupReference();
         setUpSharedPrefs();
+        setUp();
+    }
 
+    private void setUp() {
         updateUserPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!currentPassword.getText().toString().equals("") && !newPassword.getText().toString().equals("") && !repeatNewPassword.getText().toString().equals("")){
-                    if (newPassword.getText().toString().equals(repeatNewPassword.getText().toString())){
+                if (!currentPassword.getText().toString().equals("") && !newPassword.getText().toString().equals("") && !repeatNewPassword.getText().toString().equals("")) {
+                    if (newPassword.getText().toString().equals(repeatNewPassword.getText().toString())) {
                         Toast.makeText(UpdateUserPassword.this, "تم تحديث كلمة السر!", Toast.LENGTH_SHORT).show();
-                    }else{
+                    } else {
                         Toast.makeText(UpdateUserPassword.this, "كلمة السر الجديدة غير مطابقة!", Toast.LENGTH_LONG).show();
                     }
-                }else {
+                } else {
                     Toast.makeText(UpdateUserPassword.this, "أكمل المعلومات أولاً!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        imgHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UpdateUserPassword.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgCal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UpdateUserPassword.this, MonthsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgGuide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                return;
+            }
+        });
+
+        imgMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UpdateUserPassword.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void setupReference() {
@@ -52,6 +89,10 @@ public class UpdateUserPassword extends AppCompatActivity {
         newPassword = findViewById(R.id.newPassword);
         repeatNewPassword = findViewById(R.id.repeatNewPassword);
         updateUserPassword = findViewById(R.id.updateUserPassword);
+        imgHome = findViewById(R.id.imgHome);
+        imgCal = findViewById(R.id.imgCal);
+        imgGuide = findViewById(R.id.imgGuide);
+        imgMenu = findViewById(R.id.imgMenu);
     }
 
     private void setUpSharedPrefs() {
