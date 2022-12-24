@@ -11,8 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SplashActivity extends AppCompatActivity
-{
+public class SplashActivity extends AppCompatActivity {
 
     private Animation top, bottom;
     private TextView mainNameApp;

@@ -11,8 +11,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AddRev_Activity extends AppCompatActivity {
 
-    ImageView imgHome, imgCal, imgGuide, imgMenu;
-    FloatingActionButton btn;
+    private ImageView imgHome, imgCal, imgGuide, imgMenu;
+    private FloatingActionButton btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,6 @@ public class AddRev_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
 
         imgGuide = findViewById(R.id.imgGuide);
@@ -68,5 +68,6 @@ public class AddRev_Activity extends AppCompatActivity {
             }
         });
 
-    }}
+    }
+}
 

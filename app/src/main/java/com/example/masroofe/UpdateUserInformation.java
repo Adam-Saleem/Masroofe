@@ -24,9 +24,7 @@ public class UpdateUserInformation extends AppCompatActivity {
     private EditText fullName, dateBirth, username;
     private int day, month, year;
     private ImageView imgHome, imgCal, imgGuide, imgMenu;
-
     private FloatingActionButton btn;
-
     private boolean FLAG = true;
     private SharedPreferences prefs, userPrefs;
     private SharedPreferences.Editor editor, userEditor;

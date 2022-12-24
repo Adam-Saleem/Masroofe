@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean FLAG = true;
     private SharedPreferences prefs, userPrefs;
-    private SharedPreferences.Editor editor ;
+    private SharedPreferences.Editor editor;
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
 
@@ -37,12 +37,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     //--------------Methods---------------------------------------------------------
-    private void loginSetup()
-    {
+    private void loginSetup() {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 String userNameLogin = email.getText().toString();
                 String passwordLogin = password.getText().toString();
                 checkLogin(userNameLogin, passwordLogin);
@@ -50,12 +48,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void signupSetup()
-    {
+    private void signupSetup() {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent signup = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(signup);
             }
@@ -64,40 +60,32 @@ public class LoginActivity extends AppCompatActivity {
 
 
     //References
-    private void setupReference()
-    {
+    private void setupReference() {
         email = findViewById(R.id.emailLogin);
         password = findViewById(R.id.passwordLogin);
         loginBtn = findViewById(R.id.loginBtn);
         signUpBtn = findViewById(R.id.signUpBtnInLoginActivity);
-        userPrefs = getSharedPreferences("userInformation",0);
+        userPrefs = getSharedPreferences("userInformation", 0);
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
     }
 
     //check login method
-    private void checkLogin(String username, String password)
-    {
+    private void checkLogin(String username, String password) {
 
-        if(username.length() > 0 && password.length() > 0)
-        {
+        if (username.length() > 0 && password.length() > 0) {
             //get data from prefs register
             String regUsername = userPrefs.getString("username", "");
             String regPassword = userPrefs.getString("password", "");
 
-            if(username.trim().equals(regUsername.trim()) && password.trim().equals(regPassword.trim()))
-            {
+            if (username.trim().equals(regUsername.trim()) && password.trim().equals(regPassword.trim())) {
                 Intent login = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(login);
                 Toast.makeText(LoginActivity.this, "تم الدخول بنجاح", Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
+            } else {
                 Toast.makeText(LoginActivity.this, "البيانات غير صحيحة! حاول مرة أخرى", Toast.LENGTH_SHORT).show();
             }
-        }
-        else
-        {
+        } else {
             Toast.makeText(LoginActivity.this, "أملئ جميع الحقول، وحاول مرة أخرى", Toast.LENGTH_SHORT).show();
         }
 
@@ -117,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void checkDate() {
-        boolean f = prefs.getBoolean("flag",false);
+        boolean f = prefs.getBoolean("flag", false);
         if (f) {
             String Email = prefs.getString(USERNAME, "");
             String Password = prefs.getString(PASSWORD, "");

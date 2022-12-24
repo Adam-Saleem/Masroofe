@@ -19,7 +19,6 @@ public class UpdateUserPassword extends AppCompatActivity {
     private Button updateUserPassword;
     private EditText currentPassword, newPassword, repeatNewPassword;
     private ImageView imgHome, imgCal, imgGuide, imgMenu;
-
     private FloatingActionButton btn;
     private boolean flag = true;
     private SharedPreferences prefs, userPrefs;

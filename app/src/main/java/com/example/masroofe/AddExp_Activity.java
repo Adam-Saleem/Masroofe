@@ -11,8 +11,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AddExp_Activity extends AppCompatActivity {
 
-    ImageView imgHome, imgCal, imgGuide, imgMenu;
-    FloatingActionButton btn;
+    private ImageView imgHome, imgCal, imgGuide, imgMenu;
+    private FloatingActionButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

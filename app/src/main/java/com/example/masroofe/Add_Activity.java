@@ -11,9 +11,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Add_Activity extends AppCompatActivity {
 
-    ImageView btnDef, addExp, addRev;
-    ImageView imgHome, imgCal, imgGuide, imgMenu;
-    FloatingActionButton btn;
+    private ImageView btnDef, addExp, addRev;
+    private ImageView imgHome, imgCal, imgGuide, imgMenu;
+    private FloatingActionButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,6 @@ public class Add_Activity extends AppCompatActivity {
         setUp();
         barSetUp();
     }
-
 
 
     private void setUp() {
@@ -56,6 +55,7 @@ public class Add_Activity extends AppCompatActivity {
             }
         });
     }
+
     private void barSetUp() {
         imgCal = findViewById(R.id.imgCal);
         imgCal.setOnClickListener(new View.OnClickListener() {

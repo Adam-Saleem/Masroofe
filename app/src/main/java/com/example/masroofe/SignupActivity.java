@@ -164,7 +164,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void checkDate() {
-        boolean f = prefs.getBoolean("flag",false);
+        boolean f = prefs.getBoolean("flag", false);
         if (f) {
             String full_name = prefs.getString(FULLNAME, "");
             String date_birth = prefs.getString(DATEBIRTH, "");
